@@ -31,3 +31,15 @@ export const getPokemonDisplayDetailsById = (pokemonId: number) => {
             throw new Error(error);
         });
 };
+
+export const getPokemon = (pokemonId: number, limit: number = 20, offset: number = 0) => {
+    const url = `${baseUrl}/pokemon?limit=${limit}&offset=${offset}`;
+
+    axios.get(url)
+        .then((pokemonData) => {
+            return pokemonData;
+        })
+        .catch((error) => {
+            throw new Error(error);
+        });
+};
