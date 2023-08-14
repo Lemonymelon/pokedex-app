@@ -1,7 +1,22 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import { getPokemon } from '../api';
+
+export interface ListPokemon {
+    id: number,
+    name: string
+}
 
 const PokemonListScreen: React.FC = () => {
+    const [pokemon, setPokemon] = useState<ListPokemon[]>([]);
+
+    useEffect(() => {
+        getPokemon().then((pokemon) => {
+            setPokemon(pokemon)
+        })
+    }, []);
+
     return (
         <div>POKEMON LIST
             <ul>

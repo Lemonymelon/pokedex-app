@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ListPokemon } from "./components/PokemonListScreen";
 
 const baseUrls = {
     test: 'http://localhost:9090/api',
@@ -32,14 +33,11 @@ export const getPokemonDisplayDetailsById = (pokemonId: number) => {
         });
 };
 
-export const getPokemon = (pokemonId: number, limit: number = 20, offset: number = 0) => {
+export const getPokemon = async (limit: number = 20, offset: number = 0) => {
     const url = `${baseUrl}/pokemon?limit=${limit}&offset=${offset}`;
 
-    axios.get(url)
-        .then((pokemonData) => {
-            return pokemonData;
-        })
-        .catch((error) => {
-            throw new Error(error);
-        });
+    const result = await axios.get(url);
+    const pokemonData: ListPokemon[] = result.data;
+
+    return pokemonData;
 };
