@@ -8,7 +8,7 @@ const PokemonListRow: React.FC<ListPokemon> = (pokemon: ListPokemon) => {
     const { id, name } = pokemon;
     return (
         <div>
-            {`${id}: ${capitaliseWords(name)}`}
+            {`#${id}: ${capitaliseWords(name)}`}
         </div>
     )
 }

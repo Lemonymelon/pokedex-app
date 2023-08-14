@@ -20,18 +20,9 @@ const PokemonListScreen: React.FC = () => {
 
     return (
         <div>POKEMON LIST
-            {pokemon.map((pokemon) => {
-                return <PokemonListRow {...pokemon} />
+            {pokemon.map((pokemon, index) => {
+                return <PokemonListRow {...pokemon} key={index} />
             })}
-            <ul>
-                <li>
-                    <Link to="/single-pokemon">Single Pokemon</Link>
-                </li>
-                <li>
-                    <Link to="/evolution-tree">Evolution Tree</Link>
-                </li>
-            </ul>
-
         </div>
     )
 }
