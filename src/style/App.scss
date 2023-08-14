@@ -1,1 +1,14 @@
 @import './reset.scss';
+@import './Wrapper.scss';
+
+#root {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.App {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}

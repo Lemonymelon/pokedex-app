@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Wrapper = () => {
-    return <div>wrapper</div>
+    return (
+        <div className='Wrapper'>
+            <div className='Wrapper__inset'></div>
+        </div>)
 };
 
 export default Wrapper;

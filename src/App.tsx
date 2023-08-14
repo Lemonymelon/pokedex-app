@@ -5,7 +5,9 @@ import Wrapper from './components/Wrapper';
 
 const App = () => {
   return (
-    <Wrapper></Wrapper>
+    <div className='App'>
+      <Wrapper></Wrapper>
+    </div>
   )
 }
 

@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.Wrapper {
+    background-color: $pokedex-red;
+    height: 100%;
+    width: 100%;
+    padding: 50px 25px;
+
+    &__inset {
+        background-color: $pokedex-grey;
+        height: 100%;
+        width: 100%;
+    }
+}
