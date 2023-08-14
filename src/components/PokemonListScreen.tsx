@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { getPokemon } from '../api';
+import PokemonListRow from './PokemonListRow';
 
 export interface ListPokemon {
     id: number,
@@ -19,6 +20,9 @@ const PokemonListScreen: React.FC = () => {
 
     return (
         <div>POKEMON LIST
+            {pokemon.map((pokemon) => {
+                return <PokemonListRow {...pokemon} />
+            })}
             <ul>
                 <li>
                     <Link to="/single-pokemon">Single Pokemon</Link>
