@@ -1,9 +1,12 @@
 import React from 'react';
+import { ParentComponentProps } from '../utils/interfaces/ParentComponent';
 
-const Wrapper = () => {
+const Wrapper: React.FC<ParentComponentProps> = ({ children }) => {
     return (
         <div className='Wrapper'>
-            <div className='Wrapper__inset'></div>
+            <div className='Wrapper__inset'>
+                {children}
+            </div>
         </div>)
 };
 
