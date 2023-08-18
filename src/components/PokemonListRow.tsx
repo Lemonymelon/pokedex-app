@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { ListPokemon } from './PokemonListScreen';
+import { ListPokemon } from './PokemonList';
 import { capitaliseWords } from '../utils/stringFunctions';
 
 const PokemonListRow: React.FC<ListPokemon> = (pokemon: ListPokemon) => {

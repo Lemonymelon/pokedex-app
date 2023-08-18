@@ -1,5 +1,6 @@
 import axios from "axios";
-import { ListPokemon } from "./components/PokemonListScreen";
+import { ListPokemon } from "./components/PokemonList";
+import { EvolutionChain } from "./components/PokemonDisplay";
 
 const baseUrls = {
     test: 'http://localhost:9090/api',
@@ -9,16 +10,13 @@ const baseUrls = {
 
 const baseUrl = baseUrls[process.env.NODE_ENV];
 
-export const getPokemonEvolutionChainByPokemonId = (pokemonId: number, includeId: boolean) => {
-    const url = `${baseUrl}/evolutionChain/pokemonId/${pokemonId}?includeId=${includeId}`;
+export const getPokemonEvolutionChainByPokemonId = async (pokemonId: number, includeId: boolean = false, includeSprite: boolean = false) => {
+    const url = `${baseUrl}/evolutionChain/pokemonId/${pokemonId}?includeId=${includeId}&includeSprite=${includeSprite}`;
 
-    axios.get(url)
-        .then((evolutionChainData) => {
-            return evolutionChainData;
-        })
-        .catch((error) => {
-            throw new Error(error);
-        });
+    const result = await axios.get(url);
+    const evolutionChainData: EvolutionChain = result.data;
+
+    return evolutionChainData;
 };
 
 export const getPokemonDisplayDetailsById = (pokemonId: number) => {
