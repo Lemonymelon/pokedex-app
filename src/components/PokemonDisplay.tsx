@@ -18,8 +18,6 @@ const PokemonDisplay
     : React.FC<{ activePokemonId: number | null }> = ({ activePokemonId }) => {
         const [evolutionChain, setEvolutionChain] = useState<EvolutionChain | null>(null);
 
-        console.log(evolutionChain)
-
         useEffect(() => {
             activePokemonId && getPokemonEvolutionChainByPokemonId(activePokemonId, true, true).then((evolutionChain) => {
                 setEvolutionChain(evolutionChain);
@@ -29,8 +27,9 @@ const PokemonDisplay
 
         // const { id, name, spriteUrl } = pokemon;
         return (
-            <div>
-                {/* {name} */}
+            <div className='PokemonDisplay'>
+                POKEMON DISPLAY
+
             </div>
         )
     }

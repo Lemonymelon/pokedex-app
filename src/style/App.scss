@@ -1,6 +1,14 @@
 @import './reset.scss';
 @import './Wrapper.scss';
 @import './Screen.scss';
+@import './PokemonScreen.scss';
+@import './PokemonDisplay.scss';
+@import './PokemonList.scss';
+
+@font-face {
+    font-family: 'retro-gaming';
+    src: url('../../public/RetroGaming.ttf');
+}
 
 #root {
     height: 100%;

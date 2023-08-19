@@ -6,8 +6,9 @@ import { capitaliseWords } from '../utils/stringFunctions';
 const PokemonListRow: React.FC<ListPokemon> = (pokemon: ListPokemon) => {
     const { id, name } = pokemon;
     return (
-        <div>
-            {`#${id}: ${capitaliseWords(name)}`}
+        <div className='PokemonList__row'>
+
+            <div className='PokemonList__row__text'>{`#${id}: ${capitaliseWords(name)}`}</div>
         </div>
     )
 }

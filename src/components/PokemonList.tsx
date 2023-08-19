@@ -20,7 +20,7 @@ const PokemonList
         }, []);
 
         return (
-            <div>POKEMON LIST
+            <div className='PokemonList'>
                 {pokemonList.length > 0 && pokemonList.map((pokemon, index) => {
                     return <PokemonListRow {...pokemon} key={index} />
                 })}

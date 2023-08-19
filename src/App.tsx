@@ -18,8 +18,10 @@ const App = () => {
     <div className='App'>
       <Wrapper>
         <Screen>
-          <PokemonDisplay activePokemonId={activePokemonId} />
-          <PokemonList />
+          <div className='PokemonScreen'>
+            <PokemonDisplay activePokemonId={activePokemonId} />
+            <PokemonList />
+          </div>
         </Screen>
       </Wrapper>
     </div>

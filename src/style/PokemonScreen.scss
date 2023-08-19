@@ -1,0 +1,12 @@
+.PokemonScreen {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+}
