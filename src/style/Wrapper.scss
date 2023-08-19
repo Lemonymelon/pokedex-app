@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .Wrapper {
-    background-color: $pokedex-red;
+    background-image: linear-gradient(to top, $pokedex-dark-red, $pokedex-red);
     height: 100%;
     width: 100%;
     padding: 50px 25px;
@@ -14,6 +14,6 @@
         border-radius: 5px;
         border: solid 1px black;
 
-        // control clipped bottom left corner with js
+        //  control clipped bottom left corner with js
     }
 }
