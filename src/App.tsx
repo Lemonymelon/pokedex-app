@@ -6,13 +6,8 @@ import Screen from './components/Screen';
 import PokemonList from './components/PokemonList';
 import PokemonDisplay from './components/PokemonDisplay';
 
-import { ListPokemon } from './components/PokemonList';
-import { DisplayPokemon } from './components/PokemonDisplay';
-
-import { getPokemon, getPokemonDisplayDetailsById } from './api';
-
 const App = () => {
-  const [activePokemonId, setActivePokemonId] = useState<number | null>(null);
+  const [activePokemonId, setActivePokemonId] = useState<number | null>(1);
 
   return (
     <div className='App'>

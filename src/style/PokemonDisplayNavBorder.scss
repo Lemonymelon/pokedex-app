@@ -1,0 +1,112 @@
+.PokemonDisplayNavBorder {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1px black;
+    background-color: #232323;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-areas:
+        ". nav-button-predecessor ."
+        "nav-button-sibling-left nav-contents nav-button-sibling-right"
+        ". nav-button-descendant .";
+
+    grid-template-columns: 50px auto 50px;
+    grid-template-rows: 50px auto 50px;
+}
+
+.nav-button {
+    background-color: #ffffff;
+
+    .inner {
+        background-color: #9a0e0e;
+        position: absolute;
+    }
+}
+
+.nav-button-predecessor {
+    grid-area: nav-button-predecessor;
+    clip-path: polygon(0 100%, 100% 100%, 50% 0);
+    position: relative;
+
+    .inner {
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        clip-path: polygon(0 100%, 100% 100%, 50% 0);
+    }
+}
+
+.nav-button-sibling-left {
+    display: flex;
+    grid-area: nav-button-sibling-left;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    position: relative;
+
+    .inner {
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    }
+}
+
+.nav-button-sibling-right {
+    display: flex;
+    grid-area: nav-button-sibling-right;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    position: relative;
+
+    .inner {
+        top: 5%;
+        right: 5%;
+        width: 90%;
+        height: 90%;
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+}
+
+.nav-button-descendant {
+    grid-area: nav-button-descendant;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    position: relative;
+
+    .inner {
+        left: 5%;
+        top: 5%;
+        width: 90%;
+        height: 90%;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+}
+
+.nav-contents {
+    grid-area: nav-contents;
+}
+
+.arrow {
+    height: 50px;
+    width: 50px;
+}
+
+.arrow-up {
+    margin: 0 auto;
+}
+
+.arrow-right {
+    margin: auto 0;
+    rotate: 90deg;
+}
+
+.arrow-down {
+    margin: 0 auto;
+    rotate: 180deg;
+}
+
+.arrow-left {
+    margin: auto 0;
+    rotate: 270deg;
+}

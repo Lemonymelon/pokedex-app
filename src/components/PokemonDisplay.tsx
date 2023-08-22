@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import { getPokemonDisplayDetailsById, getPokemonEvolutionChainByPokemonId } from '../api';
+import PokemonTile from './PokemonTile';
+import PokemonDisplayNavBorder from './PokemonDisplayNavBorder';
 
-export interface DisplayPokemon {
-    id: string;
-    name: string;
-    sprite: string;
-}
+import { getPokemonEvolutionChainByPokemonId } from '../api';
 
 export interface EvolutionChain {
+    id: string;
     name: string;
     sprite: string;
     variations: EvolutionChain[];
@@ -24,11 +22,12 @@ const PokemonDisplay
             })
         }, [activePokemonId]);
 
-
-        // const { id, name, spriteUrl } = pokemon;
         return (
             <div className='PokemonDisplay'>
-                POKEMON DISPLAY
+                <PokemonDisplayNavBorder children={evolutionChain &&
+                    <PokemonTile
+                        pokemonTile={evolutionChain}
+                    />} />
 
             </div>
         )
